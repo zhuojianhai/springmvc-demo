@@ -87,6 +87,7 @@ public class AnnoController {
         return "success";
     }
 
+    //这个方法会优先执行
     @ModelAttribute
     public void showUser(String uname, Map<String,User> map){
         System.out.println("showUser执行了...");
