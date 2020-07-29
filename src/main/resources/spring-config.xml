@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="
+                    http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                    http://www.springframework.org/schema/tx
+                    http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+                    http://www.springframework.org/schema/aop
+                    http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+                    http://www.springframework.org/schema/context
+                    http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                    http://www.springframework.org/schema/cache
+                    http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
+
+<!--    <context:annotation-config />-->
+<!--    <context:component-scan base-package="com.zjh"/>-->
+
+    <bean id="now" class="java.util.Date">
+    </bean>
+
+
+    <!--set方式注入-->
+    <bean id="user" class="com.zjh.domain.User">
+        <property name="age" value="30"></property>
+        <property name="date" ref="now" ></property>
+        <property name="username" value="zhuojianhai"></property>
+        <property name="password" value="123456"></property>
+    </bean>
+
+    <bean id="account" class="com.zjh.domain.Account"></bean>
+
+
+
+
+<!--    告诉spring在创建容器的时候需要扫描的包，配置需要的标签不是在beans的约束中，而是
+        一个名称为context名称的命名空间的约束中，
+        xmlns:context="http://www.springframework.org/schema/context"
+-->
+    <context:annotation-config ></context:annotation-config>
+<!--    配置多个注解扫描包-->
+    <context:component-scan base-package="com.zjh.service" ></context:component-scan>
+    <context:component-scan base-package="com.zjh.dao" ></context:component-scan>
+
+
+</beans>
