@@ -5,6 +5,7 @@ import com.zjh.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * 用于创建对象的
@@ -31,7 +32,7 @@ import org.springframework.stereotype.Component;
  *          属性：value 用于指定bean的id
  *
  */
-@Component(value = "accountServiceId")
+@Service(value = "accountServiceId")
 public class AccountServiceImpl implements IAccountService {
 
     @Autowired

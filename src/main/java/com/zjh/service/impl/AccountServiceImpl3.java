@@ -5,6 +5,7 @@ import com.zjh.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
@@ -29,7 +30,7 @@ import javax.annotation.Resource;
  *          出现位置：可以出现在成员属性，方法上
  *
  */
-@Component(value = "accountServiceId3")
+@Service(value = "accountServiceId3")
 public class AccountServiceImpl3 implements IAccountService {
 
     @Autowired
