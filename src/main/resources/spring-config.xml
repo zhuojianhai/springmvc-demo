@@ -41,8 +41,14 @@
 -->
     <context:annotation-config ></context:annotation-config>
 <!--    配置多个注解扫描包-->
-    <context:component-scan base-package="com.zjh.service" ></context:component-scan>
-    <context:component-scan base-package="com.zjh.dao" ></context:component-scan>
+<!--    <context:component-scan base-package="com.zjh.service" ></context:component-scan>-->
+<!--    <context:component-scan base-package="com.zjh.dao" ></context:component-scan>-->
+
+    <!--开启注解扫描,希望处理service和dao，controller包不需要spring框架去处理-->
+    <context:component-scan base-package="com.zjh">
+        <!--配置哪些包不需要扫描-->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
 
 
 </beans>
