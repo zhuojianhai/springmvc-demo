@@ -9,6 +9,7 @@ public class SpringAnnotationTest {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfigration.class);
         User user1 = (User) applicationContext.getBean("user");
+
         User user2 = (User) applicationContext.getBean("user");
         System.out.println("user1 == user2  " +(user1==user2));
 
