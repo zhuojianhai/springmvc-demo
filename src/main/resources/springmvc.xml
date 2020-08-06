@@ -3,6 +3,7 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -41,5 +42,19 @@
 
     <!-- 开启SpringMVC框架注解的支持 -->
     <mvc:annotation-driven conversion-service="conversionService"/>
+
+<!--    配置拦截器, 多个拦截器，链式执行，谁在前就先执行谁-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 要拦截的具体方法-->
+            <mvc:mapping path="/resp/**"/>
+            <bean class="com.zjh.comm.MyInterceptor"></bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <!-- 要拦截的具体方法-->
+            <mvc:mapping path="/resp/**"/>
+            <bean class="com.zjh.comm.SpringMVCInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 </beans>

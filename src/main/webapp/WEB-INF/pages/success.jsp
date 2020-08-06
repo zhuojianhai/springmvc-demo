@@ -29,5 +29,11 @@
         ${sessionScope}
     </div>
 
+<div>
+    <%
+        out.println("通过拦截器跳转成功的页面来了");
+    %>
+</div>
+
 </body>
 </html>
