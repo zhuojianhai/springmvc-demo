@@ -1,4 +1,5 @@
 $(function () {
+    bindEvent();
     $(function () {
         $("#ajax").on("click",function(){
             var user = {
@@ -29,3 +30,21 @@ $(function () {
         });
     });
 });
+
+function bindEvent(){
+    $("#testmethod").on("click",function(){
+
+        load("18","zhuojianhai");
+    });
+    $("#testmethod1").on("click",function(){
+
+        load("18","zhuojianhai","jiangsu");
+    });
+}
+function load(age,name){
+    console.log("load1",age,name);
+}
+
+function load(age,name,address){
+    console.log("load2",age,name,address);
+}
